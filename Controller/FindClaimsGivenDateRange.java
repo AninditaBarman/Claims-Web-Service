@@ -35,7 +35,8 @@ public class FindClaimsGivenDateRange
     		Date d1 = findclaimsrequest.getFromdate();
 			Date d2 = findclaimsrequest.getTodate();
 			
-        	return FindClaimsGivenDateRangeBusiness.findClaimsGivenDateRange(d1, d2);
+			FindClaimsGivenDateRangeBusiness findClaims= new FindClaimsGivenDateRangeBusiness();
+        	return findClaims.findClaimsGivenDateRange(d1, d2);
     	}
     	catch(Exception e)
     	{

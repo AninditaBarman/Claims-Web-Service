@@ -30,7 +30,8 @@ public class ReadClaim
     	try
     	{	
     		String claimNumber= readclaimRequest.getClaimnumber();
-        	return ReadClaimBusiness.readClaim(claimNumber);
+    		ReadClaimBusiness readClaim= new ReadClaimBusiness();
+        	return readClaim.readClaim(claimNumber);
     	}
     	catch(Exception e)
     	{

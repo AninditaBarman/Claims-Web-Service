@@ -7,14 +7,15 @@ public class ReadClaimBusiness {
 	
 
 	//Business logic - any data validation etc
-	//after everything is fine call data access layer methods to retrieve info
+	//after everything is fine, call data access layer methods to retrieve info
 	//return result to controller.
 	
-	public static Claim readClaim(String claimNumber) throws Exception
+	public Claim readClaim(String claimNumber) throws Exception
 	{	
 		try
 		{
-			return CrudOperations.readClaimFromDatabase(claimNumber);
+			CrudOperations crud= new CrudOperations();
+			return crud.readClaimFromDatabase(claimNumber);
 		}
 		catch(Exception e)
 		{

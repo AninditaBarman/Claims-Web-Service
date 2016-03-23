@@ -4,11 +4,12 @@ import WebService.Claims.Beans.VehicleDetails;
 import WebService.Claims.DAL.CrudOperations;
 
 public class ReadVehicleFromClaimBusiness {
-	public static VehicleDetails readVehicleFromClaim(String claimNumber, String vin) throws Exception
+	public VehicleDetails readVehicleFromClaim(String claimNumber, String vin) throws Exception
 	{	
 		try
 		{
-			return CrudOperations.readVehicleFromClaim(claimNumber, vin);
+			CrudOperations crud= new CrudOperations();
+			return crud.readVehicleFromClaim(claimNumber, vin);
 		}
 		catch(Exception e)
 		{

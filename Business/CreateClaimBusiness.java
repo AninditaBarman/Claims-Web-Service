@@ -17,7 +17,7 @@ import WebService.Claims.DAL.CrudOperations;
 
 public class CreateClaimBusiness {	
 	
-	public static void createClaim(Mitchellclaim mclaim)
+	public String createClaim(Mitchellclaim mclaim)
 	{
 		try
 		{			
@@ -69,11 +69,13 @@ public class CreateClaimBusiness {
 			
 			claim.setVehicles(vehicles);
 			
-			CrudOperations.createClaim(claim);
+			CrudOperations crud= new CrudOperations();
+			return crud.createClaim(claim);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		return "failed";
 	}
 }

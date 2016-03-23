@@ -4,16 +4,17 @@ import WebService.Claims.DAL.CrudOperations;
 
 public class DeleteClaimBusiness {
 
-	public static String deleteClaim(String claimNumber) throws Exception
+	public String deleteClaim(String claimNumber) throws Exception
 	{	
 		try
 		{
-			return CrudOperations.deleteClaimFromDatabase(claimNumber);
+			CrudOperations crud= new CrudOperations();
+			return crud.deleteClaimFromDatabase(claimNumber);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return null;
+		return "failed";
 	}
 }

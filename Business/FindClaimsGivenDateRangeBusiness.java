@@ -8,11 +8,12 @@ import WebService.Claims.DAL.CrudOperations;
 
 public class FindClaimsGivenDateRangeBusiness {
 
-	public static List<Claim> findClaimsGivenDateRange(Date d1, Date d2) throws Exception
+	public List<Claim> findClaimsGivenDateRange(Date d1, Date d2) throws Exception
 	{	
 		try
 		{
-			return CrudOperations.getListOfClaimsFromDatabase( d1, d2);
+			CrudOperations crud= new CrudOperations();
+			return crud.getListOfClaimsFromDatabase( d1, d2);
 		}
 		catch(Exception e)
 		{

@@ -20,12 +20,13 @@ public class DeleteClaim {
     	try
     	{
     		String claimNumber= deleteclaimRequest.getClaimnumber();
-    		return DeleteClaimBusiness.deleteClaim(claimNumber);
+    		DeleteClaimBusiness deleteClaim= new DeleteClaimBusiness();
+    		return deleteClaim.deleteClaim(claimNumber);
     	}
     	catch(Exception e)
     	{
     		e.printStackTrace();
     	}   
-    	return null;
+    	return "failed";
     }
 }

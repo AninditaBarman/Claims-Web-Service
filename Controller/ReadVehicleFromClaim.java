@@ -23,7 +23,8 @@ public class ReadVehicleFromClaim {
 			String claimNumber= readvehiclerequest.getClaimnumber();
 			String vin= readvehiclerequest.getVin();
 			
-        	return ReadVehicleFromClaimBusiness.readVehicleFromClaim(claimNumber, vin);
+			ReadVehicleFromClaimBusiness readVehicle= new ReadVehicleFromClaimBusiness();
+        	return readVehicle.readVehicleFromClaim(claimNumber, vin);
     	}
     	catch(Exception e)
     	{
